@@ -101,5 +101,15 @@ def home(request):
 {% if result %} # Result is Context Dictionary Key
 {% endif %}
 
+# For Loop list
+https://fedingo.com/how-to-loop-through-list-in-django-template/
+
+# Data input Post Method
+<form action="" method="post">{% csrf_token %}<input type="submit" value="Search" name='input_name' class="btn btn-success fs-6 rounded-0 rounded-end"></form>
+
+# Data input Get Method
+<form action="" method="get"><input type="submit" value="Search" name='input_name' class="btn btn-success fs-6 rounded-0 rounded-end"></form>
+
+
 
 
