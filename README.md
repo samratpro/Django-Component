@@ -1,8 +1,8 @@
 # Django-Component
 " " quotation has been used for custom variable name, Ignore ""
 
-##Commands---------------------------------------
-# Django install..
+#Commands---------------------------------------
+-Django install..
 pip install django
 
 # Django Project Create..
