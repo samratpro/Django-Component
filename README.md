@@ -2,7 +2,7 @@
 " " quotation has been used for custom variable name, Ignore ""
 
 #Commands---------------------------------------
--Django install..
+$Django install..
 pip install django
 
 # Django Project Create..
