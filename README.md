@@ -2,44 +2,44 @@
 " " quotation has been used for custom variable name, Ignore ""
 
 #Commands---------------------------------------
-### Django install..
+### Django install...
 pip install django
 
-## Django Project Create..
+### Django Project Create..
 django-admin startproject "projectname"
 
-## Django App Creating..
+### Django App Creating..
 python manage.py startapp "appname"
 
-# Server Running..
+### Server Running..
 python manage.py runserver
 
-# Database migrate..
+### Database migrate..
 python manage.py migrate
 
-# Important folders..
+### Important folders..
 templates
 static
 
 
 
-# Setting ------------------------------------------
-# Template Connection..
+## Setting ------------------------------------------
+### Template Connection..
 BASE_DIR / 'templates'
 
-# App connection..
+### App connection..
 INSTALLED_APPS = [
     'NewApp',
 ]
 
-# Static File Connection..
+### Static File Connection..
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
 
-# URL Mapping in Project URL file-------------------
+### URL Mapping in Project URL file-------------------
 from django.contrib import admin
 from django.urls import path, include
 
@@ -49,7 +49,7 @@ urlpatterns = [
 
 
 
-# URL Mapping in App URL file----------------------
+### URL Mapping in App URL file----------------------
 from django.urls import path
 from . import views
 
@@ -58,7 +58,7 @@ urlpatterns = [
 ] # Home is function name here...
 
 
-# Views File Output-------------------------------
+## Views File Output-------------------------------
 from django.http import HttpResponse # Only for Python Function Output...
 from django.shortcuts import render
 
@@ -79,35 +79,35 @@ def home(request):
   
   
   
-# Templates-----------------------------------
-# Extend
+## Templates-----------------------------------
+### Extend
 {% extends 'base/dashboardbase.html' %}
 
-# Load static file..
+### Load static file..
 {% load static %}
 {% static 'css/style.css' %} # CSS url
 {% static 'imgs/name.png' %} # Image Url
 
-# Block content...
+### Block content...
 {% block content %}
 {% endblock content %}
 
-# Daynamic Url...
+### Daynamic Url...
 {% url 'home' %} #Home is Render Function name
 
-# Current URL condition
+### Current URL condition
 {% if request.resolver_match.url_name == "urlname" %} actv {% endif %} # urname is URL's Function name and actv is HTML class or can be anything of HTML
 
-# If condition
+### If condition
 {% if result %} # Result is Context Dictionary Key
 {% endif %}
 
-# For Loop list
+### For Loop list
 https://fedingo.com/how-to-loop-through-list-in-django-template/
 
-# Data input Post Method
-<form action="" method="post">{% csrf_token %}<input type="submit" value="Search" name='input_name' class="btn btn-success fs-6 rounded-0 rounded-end"></form>
+### Data input Post Method
+<form action="" method="post"> {% csrf_token %} <input type="submit" value="Search" name='input_name' class="btn btn-success fs-6 rounded-0 rounded-end"> </form>
 
-# Data input Get Method
-<form action="" method="get"><input type="submit" value="Search" name='input_name' class="btn btn-success fs-6 rounded-0 rounded-end"></form>
+### Data input Get Method
+<form action="" method="get"> <input type="submit" value="Search" name='input_name' class="btn btn-success fs-6 rounded-0 rounded-end"> </form>
 
