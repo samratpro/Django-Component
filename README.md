@@ -1,38 +1,38 @@
 # Django-Component
 " " quotation has been used for custom variable name, Ignore ""
 
-#Commands---------------------------------------
+## Commands---------------------------------------
 ### Django install...
 pip install django
 
 ### Django Project Create..
 django-admin startproject "projectname"
 
-### Django App Creating..
+### Django App Creating...
 python manage.py startapp "appname"
 
-### Server Running..
+### Server Running...
 python manage.py runserver
 
-### Database migrate..
+### Database migrate...
 python manage.py migrate
 
-### Important folders..
+### Important folders...
 templates
 static
 
 
 
 ## Setting ------------------------------------------
-### Template Connection..
+### Template Connection...
 BASE_DIR / 'templates'
 
-### App connection..
+### App connection...
 INSTALLED_APPS = [
     'NewApp',
 ]
 
-### Static File Connection..
+### Static File Connection...
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
@@ -55,7 +55,7 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home')  
-] # Home is function name here...
+] #Home is function name here...
 
 
 ## Views File Output-------------------------------
@@ -80,10 +80,10 @@ def home(request):
   
   
 ## Templates-----------------------------------
-### Extend
+### Extend...
 {% extends 'base/dashboardbase.html' %}
 
-### Load static file..
+### Load static file...
 {% load static %}
 {% static 'css/style.css' %} # CSS url
 {% static 'imgs/name.png' %} # Image Url
@@ -95,19 +95,32 @@ def home(request):
 ### Daynamic Url...
 {% url 'home' %} #Home is Render Function name
 
-### Current URL condition
+### Current URL condition...
 {% if request.resolver_match.url_name == "urlname" %} actv {% endif %} # urname is URL's Function name and actv is HTML class or can be anything of HTML
 
-### If condition
+### If condition...
 {% if result %} # Result is Context Dictionary Key
 {% endif %}
 
-### For Loop list
+### For Loop list...
 https://fedingo.com/how-to-loop-through-list-in-django-template/
 
-### Data input Post Method
-<form action="" method="post"> {% csrf_token %} <input type="submit" value="Search" name='input_name' class="btn btn-success fs-6 rounded-0 rounded-end"> </form>
+## Data input Post Method...
+<form action="" method="post" class="d-flex w-75 dashboard-search mt-3">
+    {% csrf_token %}
+    <input type="search" name="kwfinder" id="" class="form-control w-75 rounded-0 rounded-start" placeholder="{% if not request.POST %}Enter Sheet Keyword{% endif %}{% if request.POST %}{{result.search_box}}{% endif %}">
+    <select name="intention" class="form-select rounded-0 border-start-0 " aria-label=".form-select-lg example">
+        <option selected>Intention</option>
+        <option value="info">Info</option>
+        <option value="review">Review</option>
+    </select>
+    <select class="form-select rounded-0 border-start-0 " aria-label=".form-select-lg example">
+        <option selected>Country</option>
+        <option value="US">US</option>
+    </select>
+    <input type="submit" name="Search" value="Search" class="btn btn-success fs-6 rounded-0 rounded-end">
+  </form>
 
-### Data input Get Method
+### Data input Get Method...
 <form action="" method="get"> <input type="submit" value="Search" name='input_name' class="btn btn-success fs-6 rounded-0 rounded-end"> </form>
 
