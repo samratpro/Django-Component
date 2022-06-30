@@ -1,4 +1,10 @@
 " " quotation has been used for custom variable name, Ignore ""
+# Creating Invirment
+python -m venv env
+
+# Active envirment
+Source scripts/env/activate
+
 
 #Commands---------------------------------------
 # Django install..
