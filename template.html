@@ -1,0 +1,44 @@
+## Templates-----------------------------------
+### Extend...
+{% extends 'base/dashboardbase.html' %}
+
+### Load static file...
+{% load static %}
+{% static 'css/style.css' %} # CSS url
+{% static 'imgs/name.png' %} # Image Url
+
+### Block content...
+{% block content %}
+{% endblock content %}
+
+### Daynamic Url...
+{% url 'home' %} #Home is Render Function name
+
+### Current URL condition...
+{% if request.resolver_match.url_name == "urlname" %} actv {% endif %} # urname is URL's Function name and actv is HTML class or can be anything of HTML
+
+### If condition...
+{% if result %} # Result is Context Dictionary Key
+{% endif %}
+
+### For Loop list...
+https://fedingo.com/how-to-loop-through-list-in-django-template/
+
+## Data input Post Method...
+<form action="" method="post" class="d-flex w-75 dashboard-search mt-3">
+    {% csrf_token %}
+    <input type="search" name="kwfinder" id="" class="form-control w-75 rounded-0 rounded-start" placeholder="{% if not request.POST %}Enter Sheet Keyword{% endif %}{% if request.POST %}{{result.search_box}}{% endif %}">
+    <select name="intention" class="form-select rounded-0 border-start-0 " aria-label=".form-select-lg example">
+        <option selected>Intention</option>
+        <option value="info">Info</option>
+        <option value="review">Review</option>
+    </select>
+    <select class="form-select rounded-0 border-start-0 " aria-label=".form-select-lg example">
+        <option selected>Country</option>
+        <option value="US">US</option>
+    </select>
+    <input type="submit" name="Search" value="Search" class="btn btn-success fs-6 rounded-0 rounded-end">
+  </form>
+
+# Data input Get Method
+<form action="" method="get"><input type="submit" value="Search" name='input_name' class="btn btn-success fs-6 rounded-0 rounded-end"></form>
